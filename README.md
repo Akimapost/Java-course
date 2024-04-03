@@ -6,7 +6,10 @@
 - Github
  
   #  My major projects
-  1. 
+  A
+  B
+  C
+  
 ## My favorite part of code
 ```java
 
