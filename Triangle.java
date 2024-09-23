@@ -1,4 +1,4 @@
-// print the triangle 
+// print a triangle 
 
 
 import java.util.Scanner;
