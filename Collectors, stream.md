@@ -82,6 +82,87 @@ public class Main {
 }
 */
 ```
+```java
+/*
+Easy: Create an integer ArrayList, skip the first 5 numbers. And then with the rest of them, print them out.
+*/
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        var numbers = new ArrayList<Integer>();
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter 10 numbers
+        System.out.println("Please enter 10 numbers:");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Enter number " + (i + 1) + ": ");
+            int number = scanner.nextInt();
+            addNumber(numbers, number);
+        }
+
+        // Skip the first 5 numbers and print the rest
+        numbers
+          .stream()
+          .skip(5)
+          .forEach(x -> Print(x));
+
+        scanner.close();
+    }
+
+    // Method to add a number to the list
+    public static void addNumber(ArrayList<Integer> numbers, int number) {
+        numbers.add(number); // adds number to the ArrayList
+        System.out.println(number + " has been added to the array"); // Provide information to the user
+    }
+
+    // Method to print the number
+    public static void Print(Integer number) {
+        System.out.println(number);
+    }
+}
+```
+```java
+/*
+Medium: Create an integer ArrayList, make sure they divide by 2, skip the first 5, limit to three and print them out from another function.
+*/
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        Random random = new Random();
+
+      // Fill the list with random even numbers
+      for (int i = 0; i < 10; i++) {
+          numbers.add(random.nextInt(100) * 2); 
+      }
+
+        // Display the numbers to the user
+        System.out.println("Generated numbers:");
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+        System.out.println(); 
+
+      
+        System.out.println("Filtered numbers:");
+        numbers.stream()
+               .skip(5) 
+               .limit(3) 
+               .forEach(x -> Print(x)); 
+    }
+
+       public static void Print(Integer number) {
+           System.out.println();
+           System.out.println(number);
+        }
+}
+```
 
 
