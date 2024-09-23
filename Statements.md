@@ -133,3 +133,92 @@ public class Main {
   }
 }
 ```
+__________________________________
+*TASK
+__________________________________
+AND
+
+I will be able to open the doors, if the first key is unlocked AND if the second key is unlocked.
+
+I will log you in if your username is correct AND if your password is correct.
+
+OR
+
+I will buy eggs if they will be on the sale OR they will cost less than 2.50
+
+I will go running, if I will have enough energy OR if the weather is shiny.
+
+AND OR
+
+I will go in this restaurant if there is going to be squid OR shrimps, AND I need there to have white wine as well
+
+NOT
+
+I will go to a restaurant, if the waitress is NOT rude
+
+Combine NOT with AND OR
+
+I will go in this restaurant if there is going to be squid or shrimps, and I need there to have white wine as well. ALSO, waitress should NOT be rude
+__________________________________
+
+```java
+public class Main {
+  public static void main(String[] args) {
+//AND
+//I will be able to open the doors, if the first key is unlocked AND if the second key is unlocked.
+    boolean firstKeyUnlocked = false;
+    boolean secondKeyUnlocked = true;
+
+    if (firstKeyUnlocked && secondKeyUnlocked){
+      System.out.println("You are able to open the door.");
+    } else {
+      System.out.println("Try next time");
+    }
+ //AND
+ //I will log you in if your username is correct AND if your password is correct.
+    boolean correctUserName = true;
+    boolean correctUserPassword = true;
+
+    if (correctUserName && correctUserPassword){
+      System.out.println("You are logged in.");
+    } else {
+      System.out.println("Try to correct the name or password");
+    }
+ //OR
+ //I will buy eggs if they will be on the sale OR they will cost less than 2.50
+    boolean isOnSale = false;
+    double eggsCost = 2.60;
+    
+    if (isOnSale || eggsCost <= 2.50) {
+      System.out.println("I will buy eggs.");
+    } else {
+      System.out.println("I won't buy eggs.");
+    }
+ //OR
+ //I will go running, if I will have enough energy OR if the weather is shiny.
+
+    boolean hasEnoughEnergy = false;
+    boolean isSunShine = true;
+      if (hasEnoughEnergy || isSunShine) {
+      System.out.println("I will go running.");
+    } else {
+      System.out.println("I won't go running.");
+    }
+
+
+ //Combine NOT with AND OR
+//I will go in this restaurant if there is going to be squid or shrimps, and I need there to have white wine as well. ALSO, waitress should NOT be rude
+    boolean isWhiteWine = true;
+    boolean isShrimps = false;
+    boolean isSquid = true;
+    boolean waitressIsRude = false;
+
+      if (!waitressIsRude && isWhiteWine && (isShrimps || isSquid)) {
+      System.out.println("I  will go to this restaurant.");
+    } else {
+      System.out.println("I won't go to this restaurant.");
+    }
+
+  }
+}
+```
