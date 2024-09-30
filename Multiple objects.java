@@ -103,7 +103,60 @@ public class Fork{
  }
 }
 
-________________________
+/*
+Choose an item of your choosing and create a class.
+Define 3 different properties (same as yesterday)
+Define a function (action that you can do with this item) which would change one of the properties value
+*/
+
+public class Main {
+    public static void main(String[] args) {
+      var cat = new Cat("Minka", "Scottish straight", 40);
+      System.out.println("Kitty " + cat.name);
+      System.out.println("From " + cat.breed + "'s");
+
+      for(int i = 0; i < 100; i++){
+        cat.tiredness();
+      }
+      System.out.println("After getting tired, " + cat.name + " has " + cat.mighty + " % energy.");
+      System.out.println();
+      
+      var cat2 = new Cat("Snowball", "Persian", 90);
+      System.out.println("Kitty " + cat2.name);
+      System.out.println("From " + cat2.breed + "'s");
+        for(int i = 0; i < 100; i++){
+          cat2.tiredness();
+        }
+      System.out.println("Jumped the whole day and got tired. He has just " + cat2.mighty + " % energy.");
+      System.out.println();
+
+      var cat3 = new Cat("Coder", "Maine Coon", 99);
+      System.out.println("Kitty " + cat3.name);
+      System.out.println("From " + cat3.breed + "'s");
+        for(int i = 0; i < 100; i++){
+          cat3.tiredness();
+        }
+      System.out.println("Today was the most active. He has " + cat3.mighty + " % energy and fall asleep.");
+        }}
+
+
+
+public class Cat{
+    public String name;
+    public String breed;
+    public int mighty = 100;
+
+  public Cat(String name, String breed, int mighty) {
+    this.name = name;
+    this.breed = breed;
+    this.mighty = mighty;
+  }
+
+  public void tiredness(){
+     mighty = mighty - 1;
+ }
+}
+
 
 
 
